@@ -5,8 +5,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: "/Talking_New_Design_CICD_Github/",
-  server:{
+  server: {
     open: true,
-    port:3002,
+    port: 3002,
+  },
+  build: {
+    outDir: 'dist',
   }
 })

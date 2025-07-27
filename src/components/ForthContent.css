@@ -1,0 +1,27 @@
+.coral{
+  color: orangered;
+}
+.coral2{
+  color: orangered;
+  opacity: 10%;
+}
+.h21{
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.card{
+  padding: 0px;
+  height: 420px;
+  width: 320px;
+  margin-left: 10px;
+  margin-right: 10px;
+  
+}
+.card-img-top{
+  width: 315px;
+}
+.btn2{
+  border: 1px solid orangered;
+  background-color: orangered;
+  color: white;
+}
