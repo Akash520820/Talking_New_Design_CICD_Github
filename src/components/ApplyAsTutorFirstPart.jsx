@@ -80,7 +80,8 @@ function ApplyAsTutorFirstPart() {
                     Your browser does not support the video tag.
                   </video>
                   <div className="video-overlay">
-                    Live Sessions
+                    <span className="live-dot"></span>
+                    <span>Live Sessions</span>
                   </div>
                   <div className="video-glow"></div>
                 </div>

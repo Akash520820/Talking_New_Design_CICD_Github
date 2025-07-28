@@ -117,8 +117,8 @@ const ApplyAsTutorSecondPartgreen = () => {
                 </div>
               </div>
               
-              <div className="video-player-area">
-                <div className="video-overlay">
+              <div className="video-player-area2">
+                <div className="video-overlay2">
                   <div className="play-control">
                     <div className="play-icon">
                       <div className="play-arrow"></div>
