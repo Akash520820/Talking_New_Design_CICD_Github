@@ -25,7 +25,10 @@ const HeroSection = () => {
     },
     {
       tag: "SPECIAL OFFER",
-      title: "Avail your first 1-1 Session for ₹149 ₹99!",
+      title: "Avail your first 1-1 Session for",
+      titlePrice: true,
+      originalPrice: "₹149",
+      discountedPrice: "₹99!",
       description: "We are so confident that we provide you a 1-ON-1 Premium Video Class with an expert English tutor for just ₹99",
       primaryButton: "Get Started",
       showPhone: true,
@@ -79,7 +82,7 @@ const HeroSection = () => {
         <div className="hero-inner">
           <div className="hero-wrapper">
             {/* Content with Animation */}
-            <div className={`slide-content ${isAnimating ? 'animating' : ''}`}>
+            <div className={`slide-content ${isAnimating ? 'animating' : ''} ${currentSlide === 2 ? 'special-offer' : ''}`}>
               {/* Tag */}
               <div className="tag-container">
                 <span className="tag">
@@ -89,17 +92,27 @@ const HeroSection = () => {
 
               {/* Title with Highlight */}
               <h1 className="title">
-                {slides[currentSlide].title.split(' ').map((word, index) => {
-                  // Highlight different words based on slide
-                  const highlightWords = ['Daily', 'LIVE', '₹99!'];
-                  const isHighlight = highlightWords.some(hw => word.includes(hw));
-                  
-                  return isHighlight ? (
-                    <span key={index} className="highlight-word">{word} </span>
-                  ) : (
-                    <span key={index}>{word} </span>
-                  );
-                })}
+                {slides[currentSlide].titlePrice ? (
+                  <>
+                    {slides[currentSlide].title}{' '}
+                    <span className="price-wrapper">
+                      <span className="original-price">{slides[currentSlide].originalPrice}</span>{' '}
+                      <span className="highlight-word">{slides[currentSlide].discountedPrice}</span>
+                    </span>
+                  </>
+                ) : (
+                  slides[currentSlide].title.split(' ').map((word, index) => {
+                    // Highlight different words based on slide
+                    const highlightWords = ['Daily', 'Tutors'];
+                    const isHighlight = highlightWords.some(hw => word.includes(hw));
+                    
+                    return isHighlight ? (
+                      <span key={index} className="highlight-word">{word} </span>
+                    ) : (
+                      <span key={index}>{word} </span>
+                    );
+                  })
+                )}
               </h1>
 
               {/* Description */}
@@ -110,12 +123,12 @@ const HeroSection = () => {
               {/* Buttons */}
               <div className="button-container">
                 <button className="primary-button">
-                  ▶ {slides[currentSlide].primaryButton}
+                  <span className="button-play-icon">▶</span> {slides[currentSlide].primaryButton}
                 </button>
                 
                 {slides[currentSlide].showPhone && (
                   <button className="phone-button">
-                    📞 {slides[currentSlide].phoneNumber}
+                    <span className="phone-icon">📞</span> {slides[currentSlide].phoneNumber}
                   </button>
                 )}
               </div>
@@ -125,7 +138,7 @@ const HeroSection = () => {
                 <a href="#" className="app-store-link">
                   <div className="app-store-button">
                     <div className="app-icon">
-                      <div className="icon-wrapper">
+                      <div className="icon-wrapper google-play">
                         <span className="icon-emoji">📱</span>
                       </div>
                     </div>
@@ -139,7 +152,7 @@ const HeroSection = () => {
                 <a href="#" className="app-store-link">
                   <div className="app-store-button">
                     <div className="app-icon">
-                      <div className="icon-wrapper">
+                      <div className="icon-wrapper apple-store">
                         <span className="icon-emoji">🍎</span>
                       </div>
                     </div>
@@ -169,23 +182,25 @@ const HeroSection = () => {
 
       {/* Enhanced Bottom Features Section */}
       <div className="bottom-features">
-        <div className="row">
-          <div className="col-md-4 colclass">
-            <div className="feature-item">
-              <span className="feature-icon"><FaSignal /></span>
-              <span className="feature-text">All levels welcome</span>
+        <div className="container">
+          <div className="features-row">
+            <div className="feature-col">
+              <div className="feature-item">
+                <span className="feature-icon"><FaSignal /></span>
+                <span className="feature-text">All levels welcome</span>
+              </div>
             </div>
-          </div>
-          <div className="col-md-4 colclass">
-            <div className="feature-item">
-              <span className="feature-icon"><MdRecordVoiceOver /></span>
-              <span className="feature-text">Real conversations with native speakers</span>
+            <div className="feature-col">
+              <div className="feature-item">
+                <span className="feature-icon"><MdRecordVoiceOver /></span>
+                <span className="feature-text">Real conversations with native speakers</span>
+              </div>
             </div>
-          </div>
-          <div className="col-md-4 colclass">
-            <div className="feature-item">
-              <span className="feature-icon"><IoLocation /></span>
-              <span className="feature-text">Anytime, anywhere, 24/7</span>
+            <div className="feature-col">
+              <div className="feature-item">
+                <span className="feature-icon"><IoLocation /></span>
+                <span className="feature-text">Anytime, anywhere, 24/7</span>
+              </div>
             </div>
           </div>
         </div>
