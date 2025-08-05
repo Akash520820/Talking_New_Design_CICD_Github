@@ -1,0 +1,373 @@
+/* Main Section Styles */
+.courses-section {
+  width: 100%;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%); /* Light forest green gradient */
+  padding: 2rem 0;
+}
+
+/* Header Styles */
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title-section {
+  margin-bottom: 1rem;
+}
+
+.main-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0.5rem 0;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #15803d; /* Darker forest green */
+  opacity: 0.6;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+/* Forest Green Color Classes */
+.coral {
+  color: #16a34a; /* Forest green primary */
+}
+
+.blue {
+  color: #059669; /* Emerald green */
+}
+
+.dark {
+  color: #1f2937; /* Dark gray for contrast */
+}
+
+/* Cards Container */
+.cards-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Course Card Styles */
+.course-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(21, 128, 61, 0.1); /* Forest green shadow */
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(34, 197, 94, 0.1); /* Subtle forest green border */
+}
+
+.course-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(21, 128, 61, 0.15); /* Enhanced forest green shadow */
+  transform: translateY(-2px);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.card-image-container {
+  position: relative;
+  height: 12rem;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  filter: brightness(1.05) saturate(1.1); /* Enhance the natural colors */
+}
+
+.course-card:hover .card-image {
+  transform: scale(1.05);
+  filter: brightness(1.1) saturate(1.2);
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+/* Text truncation utility classes */
+.text-clamp-2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  min-height: 3.5rem;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Suppress linter warnings - this is widely supported */
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  display: -webkit-box;
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-line-clamp: 2;
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-box-orient: vertical;
+}
+
+.text-clamp-3 {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+  min-height: 4.5rem;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Suppress linter warnings - this is widely supported */
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  display: -webkit-box;
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-line-clamp: 3;
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-box-orient: vertical;
+}
+
+/* Apply the utility classes */
+.card-title {
+  /* Inherits from .text-clamp-2 but applied inline */
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937; /* Dark gray for better readability */
+  margin-bottom: 0.5rem;
+  min-height: 3.5rem;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Necessary for multi-line truncation */
+  -webkit-box-orient: vertical;
+}
+
+.card-description {
+  /* Inherits from .text-clamp-3 but applied inline */
+  font-size: 0.875rem;
+  color: #4b5563; /* Medium gray for descriptions */
+  margin-bottom: 1rem;
+  min-height: 4.5rem;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Necessary for multi-line truncation */
+  -webkit-box-orient: vertical;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0); /* Forest green gradient */
+  color: #15803d; /* Dark forest green text */
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.enroll-btn {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #16a34a, #15803d); /* Forest green gradient */
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(21, 128, 61, 0.2);
+}
+
+.enroll-btn:hover {
+  background: linear-gradient(135deg, #15803d, #166534); /* Darker forest green */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(21, 128, 61, 0.3);
+}
+
+/* View All Button */
+.view-all-container {
+  text-align: center;
+}
+
+.view-all-btn {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #059669, #047857); /* Emerald to darker emerald */
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 6px rgba(5, 150, 105, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.view-all-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.view-all-btn:hover {
+  background: linear-gradient(135deg, #047857, #065f46); /* Darker emerald gradient */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(5, 150, 105, 0.3);
+}
+
+.view-all-btn:hover::before {
+  left: 100%;
+}
+
+/* Tablet Styles (640px and up) */
+@media (min-width: 640px) {
+  .courses-section {
+    padding: 2.5rem 0;
+  }
+  
+  .header-container {
+    padding: 0 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .main-title {
+    font-size: 1.875rem;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .cards-container {
+    padding: 0 1.5rem;
+  }
+  
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .card-image-container {
+    height: 13rem;
+  }
+  
+  .card-content {
+    padding: 1.25rem;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+  }
+  
+  .card-description {
+    font-size: 1rem;
+  }
+  
+  .view-all-btn {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Desktop Styles (1024px and up) */
+@media (min-width: 1024px) {
+  .courses-section {
+    padding: 4rem 0;
+  }
+  
+  .header-container {
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .main-title {
+    font-size: 2.25rem;
+  }
+  
+  .cards-container {
+    padding: 0 2rem;
+  }
+  
+  .cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .card-image-container {
+    height: 12rem;
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.125rem;
+  }
+  
+  .card-description {
+    font-size: 0.875rem;
+  }
+}
+
+/* Large Desktop Styles (1280px and up) */
+@media (min-width: 1280px) {
+  .cards-grid {
+    gap: 2.5rem;
+  }
+}
+
+/* Focus States for Accessibility */
+.enroll-btn:focus,
+.view-all-btn:focus {
+  outline: 2px solid #16a34a; /* Forest green focus outline */
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2); /* Forest green focus ring */
+}
+
+/* Print Styles */
+@media print {
+  .courses-section {
+    background: white !important;
+    padding: 1rem 0;
+  }
+  
+  .course-card {
+    box-shadow: none;
+    border: 1px solid #d1d5db;
+    break-inside: avoid;
+  }
+  
+  .enroll-btn,
+  .view-all-btn {
+    background: #16a34a !important; /* Forest green for print */
+    color: white !important;
+  }
+}

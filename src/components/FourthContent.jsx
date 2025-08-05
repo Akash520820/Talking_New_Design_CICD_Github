@@ -1,5 +1,5 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./FourthContent.css";
+import React from 'react';
+import './FourthContent.css';
 
 function FourthContent() {
   const CardContent2 = [
@@ -42,51 +42,73 @@ function FourthContent() {
   ];
 
   return (
-    <>
-      <div className="container text-center">
-        <h2 className="h21">
-          <span className="coral">Special</span>{" "}
-          <span className="blue">Courses</span>{" "}
-          <span className="dark">To Meet Your</span>
-        </h2>
-        <h2 className="h21">
-          <span className="dark">Specific</span>{" "}
-          <span className="coral">Learning Needs </span>
-        </h2>
-        <h2 className="h21">
-          <span className="coral2">SPECIAL COURSES</span>
-        </h2>
+    <div className="courses-section">
+      {/* Header Section */}
+      <div className="header-container">
+        <div className="title-section">
+          <h2 className="main-title">
+            <span className="coral">Special</span>{" "}
+            <span className="blue">Courses</span>{" "}
+            <span className="dark">To Meet Your</span>
+          </h2>
+          <h2 className="main-title">
+            <span className="dark">Specific</span>{" "}
+            <span className="coral">Learning Needs</span>
+          </h2>
+        </div>
+        <h3 className="subtitle">
+          SPECIAL COURSES
+        </h3>
       </div>
-      <div className="container">
-        <div className="row">
+
+      {/* Cards Section */}
+      <div className="cards-container">
+        <div className="cards-grid">
           {CardContent2.map((item) => (
-            <div key={item.id} className="col-md-4 col-lg-3 mb-4">
-              <div className="card">
+            <div
+              key={item.id}
+              className="course-card"
+            >
+              {/* Image Container */}
+              <div className="card-image-container">
                 <img
                   src={item.imageurl}
-                  className="card-img-top"
+                  className="card-image"
                   alt={item.coursename}
-                  style={{ height: "200px", objectFit: "cover" }}
                 />
-                <div className="card-body">
-                  <h5 className="card-title">{item.coursename}</h5>
-                  <p className="card-text">{item.coursedescription}</p>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <span className="badge bg-warning">⭐ {item.raiting}</span>
-                    <a href="#" className="btn btn-primary">
-                      Enroll Now
-                    </a>
-                  </div>
+              </div>
+              
+              {/* Card Content */}
+              <div className="card-content">
+                <h5 className="card-title">
+                  {item.coursename}
+                </h5>
+                <p className="card-description">
+                  {item.coursedescription}
+                </p>
+                
+                {/* Rating and Button */}
+                <div className="card-footer">
+                  <span className="rating-badge">
+                    ⭐ {item.raiting}
+                  </span>
+                  <button className="enroll-btn">
+                    Enroll Now
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <div class="text-center">
-          <button className="btn btn2 ">View All Courses</button>
+
+        {/* View All Courses Button */}
+        <div className="view-all-container">
+          <button className="view-all-btn">
+            View All Courses
+          </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
