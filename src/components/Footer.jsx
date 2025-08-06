@@ -1,95 +1,143 @@
-import './Footer.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './Footer.css';
+import React from 'react';
 
-function Footer(){
-  return(
-    <>
-    <footer className="footer" role="contentinfo" aria-label="Site footer">
-        <div className="container CN">
-            <div className="row">
-                {/* About Section */}
-                <div className="col-lg-3 col-md-6 footer-section">
-                    <h6 id="about-heading">About</h6>
-                    <nav aria-labelledby="about-heading">
-                        <ul className="footer-links">
-                            <li><a href="#" aria-label="Learn more about us">About us</a></li>
-                            <li><a href="#" aria-label="View available career opportunities">Careers</a></li>
-                            <li><a href="#" aria-label="Get in touch with us">Contact us</a></li>
-                            <li><a href="#" aria-label="Read our latest blog posts">Blog</a></li>
-                            <li><a href="#" aria-label="Information for investors">Investors</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                
-                {/* Discover Udemy Section */}
-                <div className="col-lg-3 col-md-6 footer-section">
-                    <h6 id="discover-heading">Discover Udemy</h6>
-                    <nav aria-labelledby="discover-heading">
-                        <ul className="footer-links">
-                            <li><a href="#" aria-label="Download the Udemy mobile app">Get the app</a></li>
-                            <li><a href="#" aria-label="Start teaching courses on Udemy">Teach on Udemy</a></li>
-                            <li><a href="#" aria-label="View our subscription plans and pricing">Plans and Pricing</a></li>
-                            <li><a href="#" aria-label="Join our affiliate program">Affiliate</a></li>
-                            <li><a href="#" aria-label="Get help and customer support">Help and Support</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                
-                {/* Udemy for Business Section */}
-                <div className="col-lg-3 col-md-6 footer-section">
-                    <h6 id="business-heading">Udemy for Business</h6>
-                    <nav aria-labelledby="business-heading">
-                        <ul className="footer-links">
-                            <li><a href="#" aria-label="Explore Udemy Business solutions for organizations">Udemy Business</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                
-                {/* Legal & Accessibility Section */}
-                <div className="col-lg-3 col-md-6 footer-section">
-                    <h6 id="legal-heading">Legal & Accessibility</h6>
-                    <nav aria-labelledby="legal-heading">
-                        <ul className="footer-links">
-                            <li><a href="#" aria-label="Read our accessibility statement">Accessibility statement</a></li>
-                            <li><a href="#" aria-label="View our privacy policy">Privacy policy</a></li>
-                            <li><a href="#" aria-label="Browse our sitemap">Sitemap</a></li>
-                            <li><a href="#" aria-label="Read our terms of service">Terms</a></li>
-                        </ul>
-                    </nav>
-                </div>
+function Footer() {
+  return (
+    <footer className="footer-section">
+      <div className="footer-container">
+        {/* Footer Top Section */}
+        <div className="footer-top">
+          {/* Brand & Contact Section */}
+          <div className="footer-brand">
+            <div className="footer-logo">
+              <img 
+                src="https://talkengglobal.com/assets/images/talkeng_main_logo.png" 
+                alt="TalkEng - Learn Language Practically" 
+              />
             </div>
-            
-            {/* Footer Bottom */}
-            <div className="footer-bottom">
-                <div className="row align-items-center">
-                    <div className="col-md-6">
-                        <div className="footer-logo" role="img" aria-label="Udemy logo">
-                            <span>udemy</span>
-                        </div>
-                        <p className="copyright-text">© 2025 Udemy, Inc.</p>
-                    </div>
-                    <div className="col-md-3">
-                        <a href="#" className="cookie-settings" aria-label="Manage cookie preferences">
-                            Cookie settings
-                        </a>
-                    </div>
-                    <div className="col-md-3 text-md-end">
-                        <button 
-                            className="language-selector" 
-                            aria-label="Select language, currently English"
-                            aria-expanded="false"
-                            aria-haspopup="true"
-                            type="button"
-                        >
-                            <i className="fas fa-globe" aria-hidden="true"></i>
-                            <span>English</span>
-                        </button>
-                    </div>
-                </div>
+            <a 
+              href="mailto:support@talkengglobal.com" 
+              className="footer-contact-email"
+            >
+              support@talkengglobal.com
+            </a>
+            <div className="footer-social-links">
+              <a 
+                href="https://facebook.com/talkengglobal" 
+                className="social-link facebook"
+                aria-label="Follow TalkEng on Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+              <a 
+                href="https://twitter.com/talkengglobal" 
+                className="social-link twitter"
+                aria-label="Follow TalkEng on Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+              </a>
+              <a 
+                href="https://linkedin.com/company/talkengglobal" 
+                className="social-link linkedin"
+                aria-label="Follow TalkEng on LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+              <a 
+                href="https://instagram.com/talkengglobal" 
+                className="social-link instagram"
+                aria-label="Follow TalkEng on Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+              <a 
+                href="https://youtube.com/c/talkengglobal" 
+                className="social-link youtube"
+                aria-label="Subscribe to TalkEng on YouTube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
             </div>
+          </div>
+
+          {/* Primary Links */}
+          <div className="footer-column">
+            <h3 className="footer-column-title">Primary</h3>
+            <div className="footer-links">
+              <a href="/" className="footer-link">Home</a>
+              <a href="/tutor" className="footer-link">Tutor</a>
+              <a href="/blog" className="footer-link">TalkEng Blogs</a>
+              <a href="/achievements" className="footer-link">Achievements</a>
+              <a href="/career" className="footer-link">TalkEng Career</a>
+            </div>
+          </div>
+
+          {/* Understand Better Links */}
+          <div className="footer-column">
+            <h3 className="footer-column-title">Understand Better</h3>
+            <div className="footer-links">
+              <a href="/faq" className="footer-link">FAQ</a>
+              <a href="/features" className="footer-link">Key Features</a>
+              <a href="/contact" className="footer-link">Contact Us</a>
+              <a href="/book-trial" className="footer-link">Book a Trial</a>
+              <a href="/sitemap" className="footer-link">Sitemap</a>
+            </div>
+          </div>
+
+          {/* Contact Section */}
+          <div className="footer-contact-section">
+            <h3 className="contact-title">Got A Question?</h3>
+            <p className="contact-description">
+              Feel free to contact us. We will be happy to help you.
+            </p>
+            <a href="/contact" className="contact-button">
+              Contact Us
+            </a>
+          </div>
         </div>
+
+        {/* Footer Bottom */}
+        <div className="footer-bottom">
+          <p className="footer-copyright">
+            Copyright © 2024 | AGATSYA EDUTECH PRIVATE LIMITED
+          </p>
+          <div className="footer-legal-links">
+            <a href="/user-agreement" className="footer-legal-link">
+              User Agreement
+            </a>
+            <span className="separator">|</span>
+            <a href="/privacy-policy" className="footer-legal-link">
+              Privacy Policy
+            </a>
+            <span className="separator">|</span>
+            <a href="/payments-refunds" className="footer-legal-link">
+              Payments & Refunds
+            </a>
+          </div>
+        </div>
+      </div>
     </footer>
-    </>
-  )
- }
- export default Footer;
+  );
+}
+
+export default Footer;

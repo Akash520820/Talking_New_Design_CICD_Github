@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SecondContent from "./SecondContent";
 import ThirdContent from "./ThirdContent";
 import FourthContent from "./FourthContent";
+import FifthContent from "./FifthContent";
 
 
 function Home(){
@@ -12,6 +13,7 @@ function Home(){
       <SecondContent/>
       <ThirdContent/>
       <FourthContent />
+      <FifthContent />
     </div>
   )
 }
