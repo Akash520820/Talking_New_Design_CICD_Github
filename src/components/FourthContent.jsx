@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './FourthContent.css';
 
 function FourthContent() {
-  const CardContent2 = [
+  const [screenSize, setScreenSize] = useState('large');
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setScreenSize('large');
+      } else if (window.innerWidth >= 768) {
+        setScreenSize('medium');
+      } else {
+        setScreenSize('mobile');
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const courseData = [
     {
       id: 1,
       imageurl:
@@ -10,7 +28,7 @@ function FourthContent() {
       coursename: "Spoken English and Personality Development Program",
       coursedescription:
         "Designed for best value, this combo pack is specially crafted for you. ENROLL NOW! for the best value",
-      raiting: "4.0",
+      rating: "4.0",
     },
     {
       id: 2,
@@ -19,7 +37,7 @@ function FourthContent() {
       coursename: "English Mastery Program",
       coursedescription:
         "We are excited to introduce you to TalkEng's English Mastery Program, specially designed for students in...",
-      raiting: "4.2",
+      rating: "4.2",
     },
     {
       id: 3,
@@ -28,7 +46,7 @@ function FourthContent() {
       coursename: "English Enrichment Program",
       coursedescription:
         "The English Enrichment Program for classes 3-5 is a comprehensive language course aimed at...",
-      raiting: "4.3",
+      rating: "4.3",
     },
     {
       id: 4,
@@ -37,63 +55,96 @@ function FourthContent() {
       coursename: "English for Academic Success",
       coursedescription:
         "In this curriculum students from 6 to 8 to a rigorous curriculum, students will strengthen their reading...",
-      raiting: "4.5",
+      rating: "4.5",
     },
   ];
 
   return (
-    <div className="courses-section">
-      {/* Header Section */}
-      <div className="header-container">
-        <div className="title-section">
-          <h2 className="main-title">
-            <span className="coral">Special</span>{" "}
-            <span className="blue">Courses</span>{" "}
-            <span className="dark">To Meet Your</span>
-          </h2>
-          <h2 className="main-title">
-            <span className="dark">Specific</span>{" "}
-            <span className="coral">Learning Needs</span>
-          </h2>
+    <section className={`special-courses-section ${screenSize}-screen`}>
+      {/* Header Area */}
+      <div className="course-header-wrapper">
+        <div className="course-title-area">
+          {screenSize === 'mobile' ? (
+            <>
+              <h2 className="primary-heading mobile-heading">
+                <span className="accent-coral">Special</span>{" "}
+                <span className="accent-emerald">Courses</span>
+              </h2>
+              <h2 className="primary-heading mobile-heading">
+                <span className="accent-dark">For Your Learning</span>
+              </h2>
+            </>
+          ) : (
+            <>
+              <h2 className="primary-heading">
+                <span className="accent-coral">Special</span>{" "}
+                <span className="accent-emerald">Courses</span>{" "}
+                <span className="accent-dark">To Meet Your</span>
+              </h2>
+              <h2 className="primary-heading">
+                <span className="accent-dark">Specific</span>{" "}
+                <span className="accent-coral">Learning Needs</span>
+              </h2>
+            </>
+          )}
         </div>
-        <h3 className="subtitle">
+        <h3 className="section-tagline">
+          <span className="tagline-decoration">•</span>
           SPECIAL COURSES
+          <span className="tagline-decoration">•</span>
         </h3>
       </div>
 
-      {/* Cards Section */}
-      <div className="cards-container">
-        <div className="cards-grid">
-          {CardContent2.map((item) => (
+      {/* Course Cards Area */}
+      <div className="course-cards-wrapper">
+        <div className={`course-cards-grid ${screenSize}-grid`}>
+          {courseData.map((course, index) => (
             <div
-              key={item.id}
-              className="course-card"
+              key={course.id}
+              className={`single-course-card ${screenSize}-card`}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Image Container */}
-              <div className="card-image-container">
+              {/* Course Image Section */}
+              <div className="course-image-wrapper">
                 <img
-                  src={item.imageurl}
-                  className="card-image"
-                  alt={item.coursename}
+                  src={course.imageurl}
+                  className="course-thumbnail"
+                  alt={course.coursename}
+                  loading="lazy"
                 />
+                <div className="image-overlay">
+                  <div className="overlay-content">
+                    <span className="course-category">English Course</span>
+                  </div>
+                </div>
               </div>
               
-              {/* Card Content */}
-              <div className="card-content">
-                <h5 className="card-title">
-                  {item.coursename}
-                </h5>
-                <p className="card-description">
-                  {item.coursedescription}
+              {/* Course Details Section */}
+              <div className="course-info-container">
+                <div className="course-header-info">
+                  <h5 className="course-heading">
+                    {course.coursename}
+                  </h5>
+                  <div className="course-meta">
+                    <span className="course-duration">12 weeks</span>
+                    <span className="course-level">Beginner</span>
+                  </div>
+                </div>
+                
+                <p className="course-summary">
+                  {course.coursedescription}
                 </p>
                 
-                {/* Rating and Button */}
-                <div className="card-footer">
-                  <span className="rating-badge">
-                    ⭐ {item.raiting}
-                  </span>
-                  <button className="enroll-btn">
-                    Enroll Now
+                {/* Course Footer with Rating and CTA */}
+                <div className="course-actions-bar">
+                  <div className="rating-section">
+                    <span className="course-rating-tag">
+                      ⭐ {course.rating}
+                    </span>
+                    <span className="rating-count">(124)</span>
+                  </div>
+                  <button className="course-enroll-button">
+                    {screenSize === 'mobile' ? 'Enroll' : 'Enroll Now'}
                   </button>
                 </div>
               </div>
@@ -101,14 +152,15 @@ function FourthContent() {
           ))}
         </div>
 
-        {/* View All Courses Button */}
-        <div className="view-all-container">
-          <button className="view-all-btn">
-            View All Courses
+        {/* View All Courses CTA */}
+        <div className="view-all-wrapper">
+          <button className="view-all-courses-btn">
+            <span className="btn-text">View All Courses</span>
+            <span className="btn-icon">→</span>
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

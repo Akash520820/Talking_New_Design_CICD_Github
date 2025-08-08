@@ -92,7 +92,7 @@ function SixthContent() {
         {/* Header */}
         <div className="header-section">
           <h2 className="main-title">
-            How Our <span className="highlight-blue">Previous</span> Learners Feel
+            <span className="highlight-blue"> How Our Previous Learners Feel</span> 
           </h2>
           <h3 className="sub-title">
             About Us
