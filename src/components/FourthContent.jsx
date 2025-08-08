@@ -155,7 +155,7 @@ function FourthContent() {
         {/* View All Courses CTA */}
         <div className="view-all-wrapper">
           <button className="view-all-courses-btn">
-            <span className="btn-text">View All Courses</span>
+            <span className="btn-textCourse">View All Courses</span>
             <span className="btn-icon">→</span>
           </button>
         </div>

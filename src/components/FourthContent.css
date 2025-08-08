@@ -420,7 +420,7 @@
 
 .view-all-courses-btn {
   padding: 1rem 2.5rem;
-  background: linear-gradient(135deg, var(--accent-coral), #b91c1c);
+  background: linear-gradient(135deg, #3b82f6, #7c3aed);
   color: white;
   font-weight: 600;
   border: none;
@@ -445,14 +445,14 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(135deg, #5894f6, #7125f5);
   transition: left 0.6s ease;
 }
 
 .view-all-courses-btn:hover {
-  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  background: linear-gradient(135deg, #5894f6, #7125f5);;
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(220, 38, 38, 0.3);
+  box-shadow: linear-gradient(135deg, #5894f6, #7125f5);;
 }
 
 .view-all-courses-btn:hover::before {
