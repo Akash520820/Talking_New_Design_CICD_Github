@@ -6,7 +6,7 @@ import FourthContent from "./FourthContent";
 import FifthContent from "./FifthContent";
 import SixthContent from "./SixthContent";
 import SeventhContent from "./SeventhContent";
-
+import EightComponent from "./EightComponent";
 
 function Home(){
   return(
@@ -18,6 +18,8 @@ function Home(){
       <FifthContent />
       <SixthContent />
       <SeventhContent />
+      <EightComponent />
+
     </div>
   )
 }
