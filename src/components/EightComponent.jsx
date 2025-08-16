@@ -15,7 +15,7 @@ const EightComponent = () => {
       { threshold: 0.1 }
     );
 
-    const element = document.querySelector('.testimonials-section');
+    const element = document.querySelector('.eight-component-testimonials-section');
     if (element) observer.observe(element);
 
     return () => observer.disconnect();
@@ -102,38 +102,38 @@ const EightComponent = () => {
   };
 
   return (
-    <div className="testimonials-wrapper">
+    <div className="eight-component-wrapper">
       {/* Testimonials Section */}
-      <section className={`testimonials-section ${isVisible ? 'animate-in' : ''}`}>
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">
-              Explore <span className="highlight-blue">Testimonials</span> From Our
+      <section className={`eight-component-testimonials-section ${isVisible ? 'eight-component-animate-in' : ''}`}>
+        <div className="eight-component-container">
+          <div className="eight-component-section-header">
+            <h2 className="eight-component-section-title">
+              Explore <span className="eight-component-highlight-blue">Testimonials</span> From Our
               <br />
-              <span className="highlight-red">Learners</span>
+              <span className="eight-component-highlight-red">Learners</span>
             </h2>
           </div>
 
-          <div className="testimonials-grid">
+          <div className="eight-component-testimonials-grid">
             {testimonials.map((testimonial, index) => (
               <div 
                 key={testimonial.id} 
-                className={`testimonial-card card-${index % 4}`}
+                className={`eight-component-testimonial-card eight-component-card-${index % 4}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="card-inner">
+                <div className="eight-component-card-inner">
                   {playingVideo === testimonial.id ? (
-                    <div className="video-container">
+                    <div className="eight-component-video-container">
                       <iframe
                         src={`${testimonial.videolink}&autoplay=1`}
                         title={`${testimonial.name} testimonial`}
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
-                        className="testimonial-video"
+                        className="eight-component-testimonial-video"
                       />
                       <button 
-                        className="close-video-btn"
+                        className="eight-component-close-video-btn"
                         onClick={() => setPlayingVideo(null)}
                         aria-label="Close video"
                       >
@@ -144,17 +144,17 @@ const EightComponent = () => {
                     </div>
                   ) : (
                     <div 
-                      className="video-thumbnail-container" 
+                      className="eight-component-video-thumbnail-container" 
                       onClick={() => handleVideoToggle(testimonial.id)}
                     >
                       <img 
                         src={`https://img.youtube.com/vi/${testimonial.videoId}/maxresdefault.jpg`}
                         alt={`${testimonial.name} testimonial thumbnail`}
-                        className="video-thumbnail"
+                        className="eight-component-video-thumbnail"
                         loading="lazy"
                       />
-                      <div className="play-overlay">
-                        <div className="play-button">
+                      <div className="eight-component-play-overlay">
+                        <div className="eight-component-play-button">
                           <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M8 5v14l11-7z"/>
                           </svg>
@@ -163,14 +163,14 @@ const EightComponent = () => {
                     </div>
                   )}
                   
-                  <div className="card-content">
-                    <h5 className="testimonial-type">{testimonial.type}</h5>
-                    <div className="testimonial-info">
-                      <span className="testimonial-name">{testimonial.name}</span>
+                  <div className="eight-component-card-content">
+                    <h5 className="eight-component-testimonial-type">{testimonial.type}</h5>
+                    <div className="eight-component-testimonial-info">
+                      <span className="eight-component-testimonial-name">{testimonial.name}</span>
                       {testimonial.location && (
                         <>
-                          <span className="location-separator">•</span>
-                          <span className="testimonial-location">{testimonial.location}</span>
+                          <span className="eight-component-location-separator">•</span>
+                          <span className="eight-component-testimonial-location">{testimonial.location}</span>
                         </>
                       )}
                     </div>
@@ -183,43 +183,43 @@ const EightComponent = () => {
       </section>
 
       {/* Clients Section */}
-      <section className="clients-section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="clients-title">
-              Our Recent <span className="highlight-red">Clients</span>
+      <section className="eight-component-clients-section">
+        <div className="eight-component-container">
+          <div className="eight-component-section-header">
+            <h2 className="eight-component-clients-title">
+              Our Recent <span className="eight-component-highlight-red">Clients</span>
               <br />
-              & <span className="highlight-blue">Partners</span>
+              & <span className="eight-component-highlight-blue">Partners</span>
             </h2>
           </div>
 
-          <div className="clients-container">
-            <div className="clients-grid">
+          <div className="eight-component-clients-container">
+            <div className="eight-component-clients-grid">
               {clients.map((client, index) => (
                 <div 
                   key={client.id} 
-                  className="client-card"
+                  className="eight-component-client-card"
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >
-                  <div className="client-inner">
-                    <div className="client-logo-container">
+                  <div className="eight-component-client-inner">
+                    <div className="eight-component-client-logo-container">
                       <img 
                         src={`./src/Photo & Videos/${client.logoImage}`} 
                         alt={`${client.name} logo`}
-                        className="client-logo-image"
+                        className="eight-component-client-logo-image"
                         loading="lazy"
                         onError={(e) => {
                           e.target.style.display = 'none';
                           e.target.nextSibling.style.display = 'flex';
                         }}
                       />
-                      <div className="logo-fallback" style={{display: 'none'}}>
+                      <div className="eight-component-logo-fallback" style={{display: 'none'}}>
                         {client.name.charAt(0)}
                       </div>
                     </div>
-                    <div className="client-info">
-                      <h4 className="client-name">{client.name}</h4>
-                      <span className="client-category">{client.category}</span>
+                    <div className="eight-component-client-info">
+                      <h4 className="eight-component-client-name">{client.name}</h4>
+                      <span className="eight-component-client-category">{client.category}</span>
                     </div>
                   </div>
                 </div>
