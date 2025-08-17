@@ -1,0 +1,277 @@
+/* TenthComponent.css */
+
+.tenth-component {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  min-height: 100vh;
+}
+
+.tenth-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tenth-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.tenth-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.tenth-title .text-danger {
+  color: #dc3545 !important;
+}
+
+.tenth-title .text-primary {
+  color: #007bff !important;
+}
+
+.tenth-title .text-dark {
+  color: #343a40 !important;
+}
+
+.tenth-subtitle {
+  font-size: 2rem;
+  font-weight: 300;
+  opacity: 0.3;
+  margin-top: 10px;
+  color: #6c757d;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.achievement-card {
+  background: #ffffff;
+  border: 1px solid #e8ecef;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.achievement-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: #007bff;
+}
+
+.achievement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #dc3545, #007bff, #28a745);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.achievement-card:hover::before {
+  opacity: 1;
+}
+
+.card-image-container {
+  margin-bottom: 20px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.achievement-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-content {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.view-all-btn {
+  background: linear-gradient(135deg, #ff5722, #ff7043);
+  border: none;
+  color: white;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin: 0 auto;
+}
+
+.view-all-btn:hover {
+  background: linear-gradient(135deg, #e64a19, #ff5722);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 87, 34, 0.4);
+}
+
+.view-all-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+
+/* Large screens (desktops) */
+@media (min-width: 1200px) {
+  .achievements-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .tenth-component {
+    padding: 50px 20px;
+  }
+  
+  .tenth-title {
+    font-size: 2.2rem;
+  }
+  
+  .tenth-subtitle {
+    font-size: 1.8rem;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+/* Small screens (mobile landscape) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .tenth-component {
+    padding: 40px 15px;
+  }
+  
+  .tenth-title {
+    font-size: 1.8rem;
+  }
+  
+  .tenth-subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .achievement-card {
+    min-height: 280px;
+    padding: 20px 15px;
+  }
+  
+  .card-image-container {
+    height: 140px;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small screens (mobile portrait) */
+@media (max-width: 575px) {
+  .tenth-component {
+    padding: 30px 15px;
+  }
+  
+  .tenth-title {
+    font-size: 1.5rem;
+  }
+  
+  .tenth-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .achievement-card {
+    min-height: 260px;
+    padding: 25px 20px;
+  }
+  
+  .card-image-container {
+    height: 120px;
+  }
+  
+  .card-title {
+    font-size: 0.95rem;
+  }
+  
+  .view-all-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .tenth-component {
+    padding: 25px 10px;
+  }
+  
+  .tenth-title {
+    font-size: 1.3rem;
+  }
+  
+  .tenth-subtitle {
+    font-size: 1rem;
+  }
+  
+  .achievement-card {
+    min-height: 240px;
+    padding: 20px 15px;
+  }
+  
+  .card-image-container {
+    height: 100px;
+  }
+}

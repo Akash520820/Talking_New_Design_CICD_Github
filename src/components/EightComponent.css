@@ -239,15 +239,9 @@
 }
 
 /* Clients Section */
-.eight-component-clients-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  position: relative;
-}
-
 .eight-component-clients-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 24px;
   padding: 0;
 }
@@ -255,99 +249,40 @@
 /* Client Cards */
 .eight-component-client-card {
   background: #ffffff;
-  border-radius: 16px;
-  padding: 0;
-  text-align: center;
-  transition: var(--eight-transition-smooth);
-  border: 1px solid var(--eight-border-light);
-  box-shadow: var(--eight-shadow-light);
+  border-radius: 10px;
+  border: 1px solid #000;
+  aspect-ratio: 1;
+  width: 100%;
+  max-width: 180px;
+  margin: 0 auto;
   overflow: hidden;
+  transition: var(--eight-transition-smooth);
+  box-shadow: var(--eight-shadow-light);
   opacity: 0;
   transform: translateY(20px);
   animation: eightComponentSlideInUp 0.6s ease-out forwards;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
 }
 
 .eight-component-client-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--eight-shadow-strong);
-  border-color: #D1D5DB;
 }
 
-.eight-component-client-inner {
-  padding: 32px 20px;
-  position: relative;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.eight-component-client-logo-container {
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-  border-radius: 12px;
-  background: var(--eight-bg-gray);
-  padding: 16px;
-  transition: var(--eight-transition-smooth);
-  position: relative;
-  overflow: hidden;
-}
-
-.eight-component-client-card:hover .eight-component-client-logo-container {
-  background: #F3F4F6;
-  transform: scale(1.05);
-}
-
-.eight-component-client-logo-image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: 8px;
-  transition: var(--eight-transition-smooth);
-}
-
-.eight-component-logo-fallback {
+.eight-component-client-image {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--eight-primary-blue);
-  background: var(--eight-bg-gray);
-  border-radius: 8px;
-}
-
-.eight-component-client-info {
-  text-align: center;
-}
-
-.eight-component-client-name {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0 0 4px 0;
-  line-height: 1.3;
-  color: var(--eight-text-dark);
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
   transition: var(--eight-transition-smooth);
 }
 
-.eight-component-client-card:hover .eight-component-client-name {
-  color: var(--eight-primary-blue);
-}
-
-.eight-component-client-category {
-  font-size: 0.8rem;
-  color: var(--eight-text-gray);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.eight-component-client-card:hover .eight-component-client-image {
+  transform: scale(1.05);
 }
 
 /* Animation States */
@@ -370,6 +305,10 @@
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 20px;
   }
+  
+  .eight-component-client-card {
+    max-width: 160px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -390,6 +329,10 @@
   .eight-component-clients-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+  }
+  
+  .eight-component-client-card {
+    max-width: 150px;
   }
   
   .eight-component-video-thumbnail-container,
@@ -419,22 +362,16 @@
   }
   
   .eight-component-clients-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+  }
+  
+  .eight-component-client-card {
+    max-width: 140px;
   }
   
   .eight-component-card-content {
     padding: 16px;
-  }
-  
-  .eight-component-client-inner {
-    padding: 24px 16px;
-  }
-  
-  .eight-component-client-logo-container {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 12px;
   }
   
   .eight-component-video-thumbnail-container,
@@ -464,27 +401,19 @@
     font-size: 0.85rem;
   }
   
-  .eight-component-client-name {
-    font-size: 0.9rem;
+  .eight-component-clients-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
   
-  .eight-component-client-category {
-    font-size: 0.75rem;
+  .eight-component-client-card {
+    max-width: 180px;
   }
   
   .eight-component-video-thumbnail-container,
   .eight-component-video-container {
     height: 160px;
   }
-}
-
-/* Loading States */
-.eight-component-client-logo-image {
-  transition: opacity 0.3s ease;
-}
-
-.eight-component-client-logo-image[src=""] {
-  opacity: 0;
 }
 
 /* Focus States for Accessibility */
@@ -514,26 +443,5 @@
   .eight-component-testimonial-card:hover,
   .eight-component-client-card:hover {
     transform: none;
-  }
-}
-
-/* Print Styles */
-@media print {
-  .eight-component-video-thumbnail-container,
-  .eight-component-play-button {
-    display: none;
-  }
-  
-  .eight-component-testimonials-section,
-  .eight-component-clients-section {
-    background: white;
-    color: black;
-  }
-  
-  .eight-component-section-title,
-  .eight-component-clients-title,
-  .eight-component-testimonial-type,
-  .eight-component-testimonial-name {
-    color: rgb(28, 27, 28);
   }
 }
