@@ -135,56 +135,56 @@ function KeyFeatures() {
   ];
 
   return (
-    <section className="key-features-section">
-      <div className="features-container">
-        <div className="features-header">
-          <div className="section-badge">
-            <span className="badge-icon">⚡</span>
+    <section className="keyfeatures-section">
+      <div className="keyfeatures-container">
+        <div className="keyfeatures-header">
+          <div className="keyfeatures-badge">
+            <span className="keyfeatures-badge-icon">⚡</span>
             <span>Key Features</span>
           </div>
           
-          <h1 className="section-title">
-            Why Choose <span className="highlight">TalkEng</span>?
+          <h1 className="keyfeatures-title">
+            Why Choose <span className="keyfeatures-highlight">TalkEng</span>?
           </h1>
           
-          <p className="section-subtitle">
-            Discover the revolutionary features that make <span className="app-name">TalkEng</span> the 
+          <p className="keyfeatures-subtitle">
+            Discover the revolutionary features that make <span className="keyfeatures-app-name">TalkEng</span> the 
             most effective English learning platform in the world. Built with cutting-edge technology 
             and proven teaching methodologies.
           </p>
           
-          <div className="rating-section">
-            <div className="rating-container">
-              <div className="stars-container">
-                <FaStar className="star" />
-                <FaStar className="star" />
-                <FaStar className="star" />
-                <FaStar className="star" />
-                <FaStar className="star" />
+          <div className="keyfeatures-rating-section">
+            <div className="keyfeatures-rating-container">
+              <div className="keyfeatures-stars-container">
+                <FaStar className="keyfeatures-star" />
+                <FaStar className="keyfeatures-star" />
+                <FaStar className="keyfeatures-star" />
+                <FaStar className="keyfeatures-star" />
+                <FaStar className="keyfeatures-star" />
               </div>
-              <span className="rating-text">Trusted by 50,000+ learners worldwide</span>
+              <span className="keyfeatures-rating-text">Trusted by 50,000+ learners worldwide</span>
             </div>
           </div>
         </div>
 
-        <div className="features-grid">
+        <div className="keyfeatures-grid">
           {KeyFeaturesData.map((feature, index) => (
             <div 
               key={feature.id} 
-              className="feature-card"
+              className="keyfeatures-card"
               style={{ animationDelay: `${index * 0.05}s` }}
             >
-              <div className="card-icon-container">
-                <span className="card-icon">{feature.icon}</span>
+              <div className="keyfeatures-card-icon-container">
+                <span className="keyfeatures-card-icon">{feature.icon}</span>
               </div>
               
-              <h3 className="card-title">{feature.title}</h3>
+              <h3 className="keyfeatures-card-title">{feature.title}</h3>
               
-              <p className="card-description">{feature.description}</p>
+              <p className="keyfeatures-card-description">{feature.description}</p>
               
-              <button className="card-button">
+              <button className="keyfeatures-card-button">
                 <span>Learn More</span>
-                <FaArrowRight className="button-arrow" />
+                <FaArrowRight className="keyfeatures-button-arrow" />
               </button>
             </div>
           ))}
