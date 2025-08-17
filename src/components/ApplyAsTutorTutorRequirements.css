@@ -1,0 +1,201 @@
+/* TutorRequirements.css */
+.tutor-requirements-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.content-wrapper {
+  padding-right: 2rem;
+}
+
+.main-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+}
+
+.highlight-text {
+  color: #4f8df7;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 480px;
+}
+
+.btn-become-tutor {
+  background: linear-gradient(135deg, #4f8df7 0%, #3b82f6 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(79, 141, 247, 0.3);
+}
+
+.btn-become-tutor:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 141, 247, 0.4);
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.play-icon {
+  font-size: 0.9rem;
+}
+
+.arrow-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-become-tutor:hover .arrow-icon {
+  transform: translateX(3px);
+}
+
+.requirements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.requirement-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.requirement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #4f8df7 0%, #3b82f6 100%);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.requirement-card:hover .card-icon {
+  transform: scale(1.1);
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4f8df7;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Device-specific styling */
+.devices-card .card-icon {
+  background: linear-gradient(135deg, #4f8df7 0%, #3b82f6 100%);
+}
+
+.internet-card .card-icon {
+  background: linear-gradient(135deg, #4f8df7 0%, #3b82f6 100%);
+}
+
+.headset-card .card-icon {
+  background: linear-gradient(135deg, #4f8df7 0%, #3b82f6 100%);
+}
+
+.noise-free-card .card-icon {
+  background: linear-gradient(135deg, #4f8df7 0%, #3b82f6 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .main-title {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+  
+  .description {
+    text-align: center;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .content-wrapper {
+    text-align: center;
+    padding-right: 0;
+  }
+  
+  .tutor-requirements-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-title {
+    font-size: 2.2rem;
+  }
+  
+  .requirements-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .requirement-card {
+    padding: 1.5rem;
+  }
+  
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+  }
+  
+  .tutor-requirements-section {
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .main-title {
+    font-size: 1.8rem;
+  }
+  
+  .btn-become-tutor {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+  
+  .requirement-card {
+    padding: 1.2rem;
+  }
+}

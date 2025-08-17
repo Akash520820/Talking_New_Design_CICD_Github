@@ -1,0 +1,354 @@
+/* LearnersLevels.css */
+
+.learners-levels-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.learners-levels-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="%23dee2e6" opacity="0.4"/><circle cx="50" cy="10" r="1" fill="%23dee2e6" opacity="0.3"/><circle cx="80" cy="30" r="1" fill="%23dee2e6" opacity="0.5"/><circle cx="10" cy="70" r="1" fill="%23dee2e6" opacity="0.3"/></svg>') repeat;
+  pointer-events: none;
+}
+
+.levels-section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #4285f4;
+  text-align: center;
+  margin-bottom: 60px;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+.levels-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #4285f4, #ff6b35);
+  border-radius: 2px;
+}
+
+.level-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px 18px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+  min-height: 280px;
+  margin: 0 auto 20px auto;
+}
+
+.level-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 35px rgba(255, 107, 53, 0.15);
+  border-color: #ff6b35;
+}
+
+.level-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b35, #ff8a50, #ffab70);
+  border-radius: 12px 12px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.level-card:hover::before {
+  opacity: 1;
+}
+
+.level-icon-container {
+  width: 55px;
+  height: 55px;
+  margin: 0 auto 18px;
+  background: linear-gradient(135deg, #ff6b35, #ff8a50);
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.level-icon-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.level-card:hover .level-icon-container::before {
+  left: 100%;
+}
+
+.level-icon {
+  width: 26px;
+  height: 26px;
+  color: #ffffff;
+  z-index: 1;
+}
+
+.level-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4285f4;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.level-description {
+  font-size: 0.85rem;
+  color: #6c757d;
+  line-height: 1.5;
+  margin-bottom: 18px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.level-time {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #2c3e50;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 7px 14px;
+  border-radius: 18px;
+  border: 1px solid #dee2e6;
+  margin-top: auto;
+}
+
+/* Level-specific colors */
+.level-card:nth-child(1) .level-icon-container {
+  background: linear-gradient(135deg, #ff6b35, #ff8a50);
+}
+
+.level-card:nth-child(2) .level-icon-container {
+  background: linear-gradient(135deg, #ff6b35, #ff8a50);
+}
+
+.level-card:nth-child(3) .level-icon-container {
+  background: linear-gradient(135deg, #ff6b35, #ff8a50);
+}
+
+.level-card:nth-child(4) .level-icon-container {
+  background: linear-gradient(135deg, #ff6b35, #ff8a50);
+}
+
+.level-card:nth-child(5) .level-icon-container {
+  background: linear-gradient(135deg, #ff6b35, #ff8a50);
+}
+
+/* Progress connector */
+.level-connector {
+  position: relative;
+  padding: 0 10px;
+  margin-bottom: 30px;
+}
+
+.level-connector::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #ff6b35, #4285f4);
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.level-connector:last-child::after {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1399px) {
+  .level-card {
+    max-width: 300px;
+    min-height: 270px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .levels-section-title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+  }
+  
+  .level-card {
+    max-width: 280px;
+    min-height: 260px;
+    padding: 18px 16px;
+    margin-bottom: 25px;
+  }
+  
+  .level-icon-container {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 16px;
+  }
+  
+  .level-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .level-connector {
+    padding: 0 8px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 991px) {
+  .learners-levels-section {
+    padding: 60px 0;
+  }
+  
+  .levels-section-title {
+    font-size: 2.2rem;
+  }
+  
+  .level-connector::after {
+    display: none;
+  }
+  
+  .level-card {
+    margin-bottom: 30px;
+    max-width: 260px;
+    min-height: 250px;
+    padding: 16px 14px;
+  }
+  
+  .level-description {
+    font-size: 0.8rem;
+  }
+  
+  .level-connector {
+    padding: 0 5px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .learners-levels-section {
+    padding: 50px 0;
+  }
+  
+  .levels-section-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+  
+  .level-card {
+    padding: 15px 12px;
+    margin-bottom: 25px;
+    max-width: 240px;
+    min-height: 230px;
+  }
+  
+  .level-icon-container {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 14px;
+  }
+  
+  .level-icon {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .level-title {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+  
+  .level-description {
+    font-size: 0.75rem;
+    margin-bottom: 14px;
+  }
+  
+  .level-time {
+    font-size: 0.75rem;
+    padding: 6px 11px;
+  }
+  
+  .level-connector {
+    padding: 0;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 575px) {
+  .levels-section-title {
+    font-size: 1.6rem;
+  }
+  
+  .level-card {
+    padding: 14px 10px;
+    max-width: 220px;
+    min-height: 210px;
+    margin-bottom: 20px;
+  }
+  
+  .level-icon-container {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 12px;
+  }
+  
+  .level-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .level-title {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  
+  .level-description {
+    font-size: 0.7rem;
+    margin-bottom: 12px;
+  }
+  
+  .level-time {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+  }
+  
+  .level-connector {
+    margin-bottom: 20px;
+  }
+}
