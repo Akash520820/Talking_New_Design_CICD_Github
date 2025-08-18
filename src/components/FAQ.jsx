@@ -1,9 +1,12 @@
-import "./FAQ.css"
+import FAQFirstpart from './FAQFirstpart';
+import './FAQ.css';
+import FAQSecondPart from './FAQSecondPart';
 
 function FAQ(){
-  return (
+  return(
     <>
-    <h1 className="FAQ">FAQ page</h1>
+    <FAQFirstpart />
+    <FAQSecondPart />
     </>
   )
 }
