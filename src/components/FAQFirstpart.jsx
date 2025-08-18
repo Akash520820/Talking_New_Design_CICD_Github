@@ -14,11 +14,11 @@ const FAQFirstpart = () => {
       answer: (
         <>
           You can do a few things if you're having trouble signing in or creating an account in our app. First, make sure you're using the correct email address and password. If you've forgotten your password, you can click Forgot Password on the sign-in page to reset it. If you're still having trouble, please contact our customer support team at{' '}
-          <a href="mailto:support@talkengglobal.com" className="support-link">
+          <a href="mailto:support@talkengglobal.com" className="faq-firstpart-support-link">
             support@talkengglobal.com
           </a>{' '}
           or call/whatsapp:{' '}
-          <span className="phone-number">+91-70852-38085</span> and we'll be happy to help!
+          <span className="faq-firstpart-phone-number">+91-70852-38085</span> and we'll be happy to help!
         </>
       )
     },
@@ -71,11 +71,11 @@ const FAQFirstpart = () => {
       answer: (
         <>
           For information about current discounts and promotional offers on our plans, please contact our support team at{' '}
-          <a href="mailto:support@talkengglobal.com" className="support-link">
+          <a href="mailto:support@talkengglobal.com" className="faq-firstpart-support-link">
             support@talkengglobal.com
           </a>{' '}
           or call/whatsapp:{' '}
-          <span className="phone-number">+91-70852-38085</span>. Our team will be happy to inform you about any available discounts and help you choose the best plan for your learning needs.
+          <span className="faq-firstpart-phone-number">+91-70852-38085</span>. Our team will be happy to inform you about any available discounts and help you choose the best plan for your learning needs.
         </>
       )
     },
@@ -123,18 +123,18 @@ const FAQFirstpart = () => {
 
   return (
     <>
-    <div className="faq-container">
-      <div className="faq-header">
-        <h1 className="faq-title">Frequently Asked Questions</h1>
-        <p className="faq-subtitle">Got some confusions? Here are some quick answers.</p>
+    <div className="faq-firstpart-container">
+      <div className="faq-firstpart-header">
+        <h1 className="faq-firstpart-title">Frequently Asked Questions</h1>
+        <p className="faq-firstpart-subtitle">Got some confusions? Here are some quick answers.</p>
       </div>
 
-      <div className="accordion">
+      <div className="faq-firstpart-accordion">
         {faqData.map((faq, index) => (
-          <div key={index} className="accordion-item">
-            <h2 className="accordion-header">
+          <div key={index} className="faq-firstpart-accordion-item">
+            <h2 className="faq-firstpart-accordion-header">
               <button
-                className={`accordion-button ${activeIndex === index ? '' : 'collapsed'}`}
+                className={`faq-firstpart-accordion-button ${activeIndex === index ? '' : 'faq-firstpart-collapsed'}`}
                 type="button"
                 onClick={() => toggleAccordion(index)}
                 aria-expanded={activeIndex === index}
@@ -142,8 +142,8 @@ const FAQFirstpart = () => {
                 {faq.question}
               </button>
             </h2>
-            <div className={`accordion-collapse ${activeIndex === index ? 'show' : 'collapse'}`}>
-              <div className="accordion-body">
+            <div className={`faq-firstpart-accordion-collapse ${activeIndex === index ? 'faq-firstpart-show' : 'faq-firstpart-collapse'}`}>
+              <div className="faq-firstpart-accordion-body">
                 {faq.answer}
               </div>
             </div>

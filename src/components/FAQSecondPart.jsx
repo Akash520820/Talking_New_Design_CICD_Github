@@ -33,7 +33,7 @@ function FAQSecondPart() {
     
     if (isActive) {
       return (
-        <div className="video-player-container">
+        <div className="faq-second-video-player-container">
           <iframe
             width="100%"
             height="100%"
@@ -43,7 +43,7 @@ function FAQSecondPart() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-          <button className="close-video-btn" onClick={closeVideo}>
+          <button className="faq-second-close-video-btn" onClick={closeVideo}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -54,16 +54,16 @@ function FAQSecondPart() {
 
     return (
       <div 
-        className="video-placeholder"
+        className="faq-second-video-placeholder"
         onClick={() => handleVideoClick(videoKey)}
       >
         <img 
           src={video.thumbnail}
           alt={`${video.title} Thumbnail`}
-          className="video-thumbnail"
+          className="faq-second-video-thumbnail"
         />
-        <div className="video-overlay">
-          <div className="play-button">
+        <div className="faq-second-video-overlay">
+          <div className="faq-second-play-button">
             <svg
               width="60"
               height="60"
@@ -89,38 +89,38 @@ function FAQSecondPart() {
 
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-6 col-sm-12">
-            <div className="talkeng-download-container">
-              <div className="content-wrapper">
-                <h1 className="main-title">
+      <div className="faq-second-container">
+        <div className="faq-second-row">
+          <div className="faq-second-col-lg-6 faq-second-col-sm-12">
+            <div className="faq-second-talkeng-download-container">
+              <div className="faq-second-content-wrapper">
+                <h1 className="faq-second-main-title">
                   {videos.download.title}
                 </h1>
 
-                <p className="subtitle">
+                <p className="faq-second-subtitle">
                   {videos.download.description}
                 </p>
 
-                <div className="video-container">
+                <div className="faq-second-video-container">
                   {renderVideoPlayer('download')}
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="col-lg-6 col-sm-12">
-            <div className="talkeng-download-container">
-              <div className="content-wrapper">
-                <h1 className="main-title">
+          <div className="faq-second-col-lg-6 faq-second-col-sm-12">
+            <div className="faq-second-talkeng-download-container">
+              <div className="faq-second-content-wrapper">
+                <h1 className="faq-second-main-title">
                   {videos.registration.title}
                 </h1>
 
-                <p className="subtitle">
+                <p className="faq-second-subtitle">
                   {videos.registration.description}
                 </p>
 
-                <div className="video-container">
+                <div className="faq-second-video-container">
                   {renderVideoPlayer('registration')}
                 </div>
               </div>
