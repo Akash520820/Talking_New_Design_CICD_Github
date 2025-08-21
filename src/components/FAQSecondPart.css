@@ -1,263 +1,155 @@
-/* FAQ Second Part - Container and Grid Styles */
-.faq-second-container {
+/* FAQ Section Styles */
+.faq-section {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+}
+
+.faq-section .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 0 20px;
 }
 
-.faq-second-row {
+.faq-section .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin: 0 -1rem;
+  gap: 30px;
+  justify-content: center;
 }
 
-.faq-second-col-lg-6 {
+/* FAQ Card Styles */
+.faq-card {
   flex: 1;
-  min-width: 300px;
-  padding: 0 1rem;
+  min-width: 350px;
+  max-width: 550px;
 }
 
-/* FAQ Second Part - Main Container Styles */
-.faq-second-talkeng-download-container {
+.faq-content {
   background: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
-}
-
-.faq-second-talkeng-download-container:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
-}
-
-/* FAQ Second Part - Content Wrapper */
-.faq-second-content-wrapper {
-  padding: 2rem;
+  padding: 40px 30px;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-/* FAQ Second Part - Typography */
-.faq-second-main-title {
+.faq-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+.faq-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.faq-header h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 1rem;
+  color: #2c3e50;
+  margin: 0;
   line-height: 1.3;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.faq-second-subtitle {
+/* Description Styles */
+.faq-description {
   font-size: 1rem;
-  color: #666666;
-  margin-bottom: 1.5rem;
+  color: #6c757d;
+  text-align: center;
+  margin-bottom: 30px;
   line-height: 1.6;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  flex-grow: 1;
 }
 
-/* FAQ Second Part - Video Container Styles */
-.faq-second-video-container {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: auto;
-}
-
-.faq-second-video-placeholder {
+/* Video Container Styles */
+.video-container {
   position: relative;
-  width: 100%;
-  max-width: 400px;
-  aspect-ratio: 16/9;
-  border-radius: 12px;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
   overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  background: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background: transparent;
 }
 
-.faq-second-video-placeholder:hover {
-  transform: scale(1.02);
+/* Remove any pseudo-elements that might create circles */
+.video-container::before,
+.video-container::after {
+  display: none !important;
 }
 
-/* FAQ Second Part - Video Thumbnail */
-.faq-second-video-thumbnail {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* FAQ Second Part - Video Overlay */
-.faq-second-video-overlay {
+.video-iframe {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s ease;
-}
-
-.faq-second-video-placeholder:hover .faq-second-video-overlay {
-  background: rgba(0, 0, 0, 0.4);
-}
-
-/* FAQ Second Part - Play Button */
-.faq-second-play-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-}
-
-.faq-second-video-placeholder:hover .faq-second-play-button {
-  transform: scale(1.1);
-}
-
-.faq-second-play-button svg {
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-}
-
-/* FAQ Second Part - Video Player Styles */
-.faq-second-video-player-container {
-  position: relative;
   width: 100%;
-  max-width: 400px;
-  aspect-ratio: 16/9;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #000;
-}
-
-.faq-second-video-player-container iframe {
-  border-radius: 12px;
-}
-
-.faq-second-close-video-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
   border: none;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-  z-index: 10;
+  border-radius: 12px;
 }
 
-.faq-second-close-video-btn:hover {
-  background: rgba(0, 0, 0, 0.9);
-  transform: scale(1.1);
-}
-
-.faq-second-close-video-btn:focus {
-  outline: 2px solid #FF4444;
-  outline-offset: 2px;
-}
-
-/* FAQ Second Part - Responsive Design */
-@media (max-width: 768px) {
-  .faq-second-container {
-    padding: 1rem;
-  }
-  
-  .faq-second-row {
+/* Responsive Design */
+@media (max-width: 992px) {
+  .faq-section .row {
     flex-direction: column;
-    gap: 1.5rem;
+    align-items: center;
   }
   
-  .faq-second-col-lg-6 {
-    min-width: auto;
+  .faq-card {
+    max-width: 600px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 40px 0;
   }
   
-  .faq-second-content-wrapper {
-    padding: 1.5rem;
+  .faq-content {
+    padding: 30px 20px;
   }
   
-  .faq-second-main-title {
-    font-size: 1.25rem;
+  .faq-header h3 {
+    font-size: 1.3rem;
   }
   
-  .faq-second-subtitle {
-    font-size: 0.9rem;
-    margin-bottom: 1.25rem;
+  .faq-description {
+    font-size: 0.95rem;
+  }
+  
+  .faq-card {
+    min-width: unset;
   }
 }
 
 @media (max-width: 480px) {
-  .faq-second-container {
-    padding: 0.5rem;
+  .faq-section .container {
+    padding: 0 15px;
   }
   
-  .faq-second-content-wrapper {
-    padding: 1rem;
+  .faq-content {
+    padding: 25px 15px;
   }
   
-  .faq-second-main-title {
-    font-size: 1.1rem;
-  }
-  
-  .faq-second-subtitle {
-    font-size: 0.85rem;
-  }
-  
-  .faq-second-play-button svg {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .faq-second-close-video-btn {
-    width: 32px;
-    height: 32px;
-    top: 8px;
-    right: 8px;
-  }
-  
-  .faq-second-close-video-btn svg {
-    width: 20px;
-    height: 20px;
+  .faq-header h3 {
+    font-size: 1.2rem;
   }
 }
 
-/* FAQ Second Part - Loading Animation for Videos */
-.faq-second-video-placeholder::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transform: translateX(-100%);
-  animation: faq-second-shimmer 2s infinite;
-  z-index: 1;
-}
-
-@keyframes faq-second-shimmer {
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-/* FAQ Second Part - Focus States for Accessibility */
-.faq-second-video-placeholder:focus {
-  outline: 2px solid #FF4444;
-  outline-offset: 2px;
-}
-
-.faq-second-video-placeholder:focus .faq-second-play-button {
-  transform: scale(1.1);
+/* Ensure videos are clickable and playable */
+.video-iframe {
+  cursor: pointer;
 }

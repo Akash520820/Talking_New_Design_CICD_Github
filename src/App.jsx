@@ -7,7 +7,8 @@ import Home from "./components/Home";
 import KeyFeatures from "./components/KeyFeatures";
 import ApplyAsTutor from "./components/ApplyAsTutor";
 import FAQ from "./components/FAQ";
-import Olympiad202025 from "./components/Olympiad202025";
+import OlympiadHome from "./components/OlympiadHome";
+import OlympiadGallery from "./components/OlympiadGallery";
 import XceleratorInternship from "./components/XceleratorInternship";
 
 const router = createBrowserRouter([
@@ -32,13 +33,17 @@ const router = createBrowserRouter([
         element: <FAQ />,
       },
       {
-        path: "/Olympiad202025",
-        element: <Olympiad202025 />,
+        path: "/OlympiadHome",
+        element: <OlympiadHome />,
+      },
+      {
+        path: "/OlympiadGallery",
+        element: <OlympiadGallery />,
       },
       {
         path: "/XceleratorInternship",
         element: <XceleratorInternship />,
-      },
+      }
     ],
   },
 ], {

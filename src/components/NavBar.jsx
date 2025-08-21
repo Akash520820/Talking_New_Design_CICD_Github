@@ -6,17 +6,46 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function NavBar(){
   const location = useLocation();
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   
   // Function to check if the current path matches the link
   const isActive = (path) => {
     return location.pathname === path;
   };
 
+  // Function to check if any olympiad route is active
+  const isOlympiadActive = () => {
+    return location.pathname === '/OlympiadHome' || location.pathname === '/OlympiadGallery';
+  };
+
   // Handle navbar toggle
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
+  // Handle dropdown toggle
+  const handleDropdownToggle = () => setIsDropdownOpen(!isDropdownOpen);
+
   // Close navbar when a link is clicked (for mobile)
-  const closeNav = () => setIsNavCollapsed(true);
+  const closeNav = () => {
+    setIsNavCollapsed(true);
+    setIsDropdownOpen(false);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const dropdown = document.querySelector('.dropdown-menu');
+      const dropdownToggle = document.querySelector('.dropdown-toggle');
+      
+      if (isDropdownOpen && dropdown && !dropdown.contains(event.target) && !dropdownToggle.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isDropdownOpen]);
 
   // Close navbar when clicking outside (mobile)
   useEffect(() => {
@@ -26,6 +55,7 @@ function NavBar(){
       
       if (!isNavCollapsed && navbar && !navbar.contains(event.target) && !toggler.contains(event.target)) {
         setIsNavCollapsed(true);
+        setIsDropdownOpen(false);
       }
     };
 
@@ -38,6 +68,7 @@ function NavBar(){
   // Close navbar on route change
   useEffect(() => {
     setIsNavCollapsed(true);
+    setIsDropdownOpen(false);
   }, [location]);
 
   // Prevent body scroll when mobile menu is open
@@ -123,15 +154,35 @@ function NavBar(){
                              FAQ
                         </Link>
                     </li>
-                    <li className="nav-item">
-                        <Link 
-                            className={`nav-link ${isActive('/Olympiad202025') ? 'active' : ''}`} 
-                            to="/Olympiad202025"
-                            onClick={closeNav}
-                            aria-current={isActive('/Olympiad202025') ? 'page' : undefined}
+                    <li className={`nav-item dropdown ${isOlympiadActive() ? 'active' : ''}`}>
+                        <button 
+                            className={`nav-link dropdown-toggle ${isOlympiadActive() ? 'active' : ''}`}
+                            onClick={handleDropdownToggle}
+                            aria-expanded={isDropdownOpen}
+                            aria-haspopup="true"
                         >
-                             Olympiad 2.0 2024
-                        </Link>
+                            Olympiad 2.0 2024
+                        </button>
+                        <ul className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`}>
+                            <li>
+                                <Link 
+                                    className={`dropdown-item ${isActive('/OlympiadHome') ? 'active' : ''}`} 
+                                    to="/OlympiadHome"
+                                    onClick={closeNav}
+                                >
+                                    Home
+                                </Link>
+                            </li>
+                            <li>
+                                <Link 
+                                    className={`dropdown-item ${isActive('/OlympiadGallery') ? 'active' : ''}`} 
+                                    to="/OlympiadGallery"
+                                    onClick={closeNav}
+                                >
+                                    Gallery
+                                </Link>
+                            </li>
+                        </ul>
                     </li>
                     <li className="nav-item">
                          <Link 

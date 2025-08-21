@@ -1,7 +1,9 @@
+import Olympiad202025NavBar from "./Olympiad202025NavBar";
+
 function Olympiad202025(){
   return(
     <>
-    <h1>Olympiad2.02025</h1>
+    <Olympiad202025NavBar />
     </>
   )
 }
