@@ -1,0 +1,115 @@
+/* OlympiadPrizes.css */
+
+.olympiad-prizes-section {
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.olympiad-prizes-title {
+  font-size: 3rem;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+}
+
+.prize-card {
+  background: white;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.prize-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.prize-image-container {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.prize-image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.prize-badge {
+  padding: 12px 20px;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  margin: 0 auto;
+  max-width: fit-content;
+  text-transform: lowercase;
+}
+
+.first-prize {
+  background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+}
+
+.second-prize {
+  background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+}
+
+.third-prize {
+  background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+}
+
+.prize-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.prize-value {
+  font-size: 0.95rem;
+  color: #6b7280 !important;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .olympiad-prizes-title {
+    font-size: 2.5rem;
+  }
+  
+  .prize-image-container {
+    height: 180px;
+  }
+  
+  .prize-badge {
+    padding: 10px 16px;
+  }
+  
+  .prize-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .olympiad-prizes-title {
+    font-size: 2rem;
+  }
+  
+  .prize-image-container {
+    height: 160px;
+  }
+  
+  .prize-card {
+    margin-bottom: 2rem;
+  }
+}

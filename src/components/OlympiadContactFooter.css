@@ -1,0 +1,447 @@
+/* OlympiadContactFooter.css */
+
+/* Contact Section */
+.olympiad-contact-section {
+  background-image: url('https://images.websitebuilderexpert.com/wp-content/uploads/2023/02/13045442/Contact-Us-Page-Examples.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* REMOVED: background-attachment: fixed; - This was causing the issue */
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+  /* Fallback gradient in case image doesn't load */
+  background-color: #667eea;
+}
+
+/* Alternative background images in case the primary doesn't load */
+.olympiad-contact-section {
+  background-image: 
+    url('https://images.websitebuilderexpert.com/wp-content/uploads/2023/02/13045442/Contact-Us-Page-Examples.jpg'),
+    url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'),
+    linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.olympiad-contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.olympiad-contact-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.7) 0%, rgba(118, 75, 162, 0.7) 100%);
+  z-index: 2;
+}
+
+.olympiad-contact-section .container {
+  position: relative;
+  z-index: 3;
+}
+
+.olympiad-contact-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.olympiad-contact-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #ffd700, #ff6b35);
+  border-radius: 2px;
+}
+
+.olympiad-contact-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0;
+  font-weight: 300;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Contact Cards */
+.olympiad-contact-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 1px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.olympiad-contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.olympiad-contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.olympiad-contact-card:hover::before {
+  transform: scaleX(1);
+}
+
+.olympiad-contact-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.olympiad-contact-icon-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(-45deg);
+  transition: all 0.6s ease;
+}
+
+.olympiad-contact-card:hover .olympiad-contact-icon-wrapper::before {
+  transform: rotate(-45deg) translate(100%, 100%);
+}
+
+.olympiad-contact-emoji {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.olympiad-contact-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.olympiad-contact-card-detail {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+
+.olympiad-contact-card-description {
+  font-size: 0.95rem;
+  color: #718096;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Footer Section */
+.olympiad-footer-section {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  padding: 80px 0 40px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.olympiad-footer-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 70% 30%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 30% 70%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.olympiad-footer-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.olympiad-footer-brand {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.olympiad-footer-logo {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.olympiad-footer-logo-highlight {
+  color: #ff6b35;
+  position: relative;
+}
+
+.olympiad-footer-logo-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ffd700, #ff6b35);
+  border-radius: 2px;
+}
+
+.olympiad-footer-version {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #ffd700;
+  margin-top: 5px;
+  letter-spacing: 2px;
+}
+
+.olympiad-footer-organizer {
+  font-size: 1.2rem;
+  color: #cbd5e0;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.olympiad-footer-company {
+  color: #ffd700;
+  font-weight: 500;
+}
+
+.olympiad-footer-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg, 
+    transparent 0%, 
+    rgba(203, 213, 224, 0.3) 20%, 
+    rgba(255, 215, 0, 0.5) 50%, 
+    rgba(203, 213, 224, 0.3) 80%, 
+    transparent 100%
+  );
+  border: none;
+  margin: 40px auto;
+  max-width: 600px;
+}
+
+.olympiad-footer-bottom {
+  padding-top: 30px;
+}
+
+.olympiad-footer-copyright {
+  font-size: 1rem;
+  color: #a0aec0;
+  margin: 0;
+  font-weight: 400;
+}
+
+.olympiad-footer-website-link {
+  color: #667eea;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border: 2px solid #667eea;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.olympiad-footer-website-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.olympiad-footer-website-link:hover {
+  color: white;
+  background: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.olympiad-footer-website-link:hover::before {
+  left: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .olympiad-contact-section {
+    padding: 80px 0;
+  }
+
+  .olympiad-contact-title {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+  }
+
+  .olympiad-contact-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .olympiad-contact-card {
+    margin-bottom: 30px;
+    padding: 30px 25px;
+  }
+
+  .olympiad-contact-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+  }
+
+  .olympiad-contact-emoji {
+    font-size: 1.8rem;
+  }
+
+  .olympiad-contact-card-title {
+    font-size: 1.3rem;
+  }
+
+  .olympiad-footer-logo {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+  }
+
+  .olympiad-footer-version {
+    font-size: 1.3rem;
+  }
+
+  .olympiad-footer-organizer {
+    font-size: 1.1rem;
+  }
+
+  .olympiad-footer-section {
+    padding: 60px 0 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .olympiad-contact-title {
+    font-size: 2.2rem;
+  }
+
+  .olympiad-contact-subtitle {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+
+  .olympiad-contact-card {
+    padding: 25px 20px;
+  }
+
+  .olympiad-contact-card-title {
+    font-size: 1.2rem;
+  }
+
+  .olympiad-contact-card-detail {
+    font-size: 1rem;
+  }
+
+  .olympiad-contact-card-description {
+    font-size: 0.9rem;
+  }
+
+  .olympiad-footer-logo {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+  }
+
+  .olympiad-footer-version {
+    font-size: 1.1rem;
+  }
+
+  .olympiad-footer-organizer {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+
+  .olympiad-footer-copyright {
+    font-size: 0.9rem;
+  }
+
+  .olympiad-footer-website-link {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .olympiad-footer-bottom {
+    padding-top: 20px;
+  }
+
+  .olympiad-footer-bottom .col-md-6 {
+    margin-bottom: 20px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .olympiad-contact-title {
+    font-size: 1.8rem;
+  }
+
+  .olympiad-footer-logo {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .olympiad-footer-website-link {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
