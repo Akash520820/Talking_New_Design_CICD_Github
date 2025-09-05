@@ -184,16 +184,7 @@ function NavBar(){
                             </li>
                         </ul>
                     </li>
-                    <li className="nav-item">
-                         <Link 
-                            className={`nav-link ${isActive('/XceleratorInternship') ? 'active' : ''}`} 
-                            to="/XceleratorInternship"
-                            onClick={closeNav}
-                            aria-current={isActive('/XceleratorInternship') ? 'page' : undefined}
-                         >
-                             Xcelerator Internship
-                         </Link>
-                    </li>
+                    
                 </ul>
                 
                 <div className="mobile-trial-wrapper d-lg-none">
